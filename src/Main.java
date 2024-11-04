@@ -11,12 +11,21 @@ public class Main {
         Bicycle bicycle = new Bicycle("bicycle1", 2);
         Bicycle bicycle2 = new Bicycle("bicycle2", 2);
 
-        ServiceStation station = new ServiceStation();
-        station.check(car, null, null);
-        station.check(car2, null, null);
-        station.check(null, null, truck);
-        station.check(null, null, truck2);
-        station.check(null, bicycle, null);
-        station.check(null, bicycle2, null);
+        Transport[] transports = {
+                car,
+                car2,
+                truck,
+                truck2,
+                bicycle,
+                bicycle2
+        };
+
+
+        ServiseStation serviseStation = new ServiseStation();
+
+        for (Transport transport : transports) {
+            serviseStation.check(transport);
+            System.out.println();
+        }
     }
 }
